@@ -1,0 +1,6 @@
+aiohttp
+Flask
+requests
+pandas
+numpy
+

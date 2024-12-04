@@ -1,0 +1,17 @@
+/* General Body Styling */
+body {
+  margin: 0;
+  font-family: 'Poly', sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at center, #001848, #000c24);
+  background-attachment: fixed;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+  

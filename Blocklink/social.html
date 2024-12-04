@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Sentiment Analysis</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Social Media Sentiment Analysis</h1>
+        <p>Analyzing tweets related to Bitcoin (BTC).</p>
+
+        <div id="tweets">
+            <h2>Fetched Tweets</h2>
+            <ul id="tweetList"></ul>
+        </div>
+
+        <div id="sentiment">
+            <h2>Sentiment Analysis</h2>
+            <canvas id="sentimentChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Placeholder: Simulating data from Python script
+        const tweets = [
+            "Bitcoin is skyrocketing!", 
+            "BTC market is bearish today.", 
+            "I'm so excited about Bitcoin's future!", 
+            "Bitcoin crashes again, what's new?"
+        ];
+
+        const sentiments = {
+            positive: 2,
+            negative: 1,
+            neutral: 1
+        };
+
+        // Display tweets
+        const tweetList = document.getElementById('tweetList');
+        tweets.forEach(tweet => {
+            const listItem = document.createElement('li');
+            listItem.textContent = tweet;
+            tweetList.appendChild(listItem);
+        });
+
+        // Render Sentiment Chart
+        const ctx = document.getElementById('sentimentChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Positive', 'Negative', 'Neutral'],
+                datasets: [{
+                    data: [sentiments.positive, sentiments.negative, sentiments.neutral],
+                    backgroundColor: ['#4caf50', '#f44336', '#2196f3']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
